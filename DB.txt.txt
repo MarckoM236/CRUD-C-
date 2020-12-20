@@ -1,0 +1,13 @@
+create database contacts;
+use contacts;
+
+create table contact(
+
+id int not null auto_increment primary key,
+name varchar(255),
+lastname varchar(255),
+address varchar(255),
+phone varchar(255),
+email varchar(255),
+created_at datetime
+);
