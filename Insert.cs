@@ -27,7 +27,7 @@ namespace CRUD
             string email = txb_email.Text;
 
           int result= controller.Insertar(name, lastname, address, phone, email);
-            if (result > 1)
+            if (result > 0)
             {
                 MessageBox.Show("Saved successfully");
             }
@@ -36,6 +36,11 @@ namespace CRUD
                 MessageBox.Show("Could not save");
             }
 
+        }
+
+        private void btn_cancel_Click(object sender, EventArgs e)
+        {
+            txb_name.Text = "";
         }
     }
 }

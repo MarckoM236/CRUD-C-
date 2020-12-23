@@ -16,7 +16,7 @@ namespace CRUD
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Insert());
+            Application.Run(new principal());
         }
     }
 }

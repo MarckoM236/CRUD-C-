@@ -8,22 +8,31 @@ namespace CRUD
 {
     class contact
     {
+        private string Id;
         private string name;
         private string lastname;
         private string address;
         private string phone;
         private string email;
+        private string created_at;
         
 
         public contact() { }
-        public contact(string nam, string lname, string add, string pho, string ema) {
+        public contact(string id, string nam, string lname, string add, string pho, string ema, string cr_at) {
+            Id = id;
             name = nam;
             lastname = lname;
             address = add;
             phone = pho;
             email = ema;
+            created_at = cr_at;
         }
 
+        public string Idd
+        {
+            get { return Id; }
+            set { Id = value; }
+        }
         public string Name
         {
             get { return name; }
@@ -48,6 +57,11 @@ namespace CRUD
         {
             get { return email; }
             set { email = value; }
+        }
+        public string Created
+        {
+            get { return created_at; }
+            set { created_at = value; }
         }
     }
 }
