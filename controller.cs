@@ -18,7 +18,6 @@ namespace CRUD
             retorno = comando.ExecuteNonQuery();
 
             return retorno;
-
         }
 
         public static List<contact> Query()
@@ -41,7 +40,41 @@ namespace CRUD
                 lista.Add(c);
             }
             return lista;
+        }
 
+        public static Array QueryID(int id)
+        {
+            string[] result= new string[] { };
+            MySqlCommand comando = new MySqlCommand(string.Format("select * from contact where id="+id), Conexion.ObtenerConexion());
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.Read() == true)
+            {
+                contact c = new contact();
+                string i= c.Idd = reader.GetString(0);
+                string n= c.Name = reader.GetString(1);
+                string ln= c.LastName = reader.GetString(2);
+                string a= c.Address = reader.GetString(3);
+                string p= c.Phone = reader.GetString(4);
+                string e= c.Email = reader.GetString(5);
+                string cr= c.Created = reader.GetString(6);
+
+                result= new string[] {i,n,ln,a,p,e,cr};
+            }
+            return result;
+        }
+
+        public static int update(string id, string name, string lastname, string address, string phone, string email)
+        {
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand(string.Format("update contact set name='"+name+"', lastname='"+lastname+ "', address='" + address + "', phone='" + phone + "',  email='" + email + "'   where id='" + id+"'"), Conexion.ObtenerConexion());
+            MySqlDataReader reader = comando.ExecuteReader();
+
+            if (reader.Read() == false)
+            {
+                retorno = 1;
+            }
+            return retorno;
         }
 
     }

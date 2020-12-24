@@ -16,6 +16,7 @@ namespace CRUD
         {
             InitializeComponent();
             dgv.DataSource = controller.Query();
+            dgv.AutoResizeColumns();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -29,6 +30,30 @@ namespace CRUD
         private void btn_refresh_Click(object sender, EventArgs e)
         {
             dgv.DataSource = controller.Query();
+            dgv.AutoResizeColumns();
+
+            
+        }
+
+        private void dgv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void principal_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            var id = this.dgv.CurrentRow.Cells[0].Value.ToString();
+            update U = new update(id);
+            this.Hide();
+            U.ShowDialog();
+            this.Show();
+            
+
         }
     }
 }

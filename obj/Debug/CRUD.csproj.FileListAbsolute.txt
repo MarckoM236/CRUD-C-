@@ -24,3 +24,4 @@ C:\Users\Marko\source\repos\CRUD\CRUD\obj\Debug\CRUD.exe
 C:\Users\Marko\source\repos\CRUD\CRUD\obj\Debug\CRUD.pdb
 C:\Users\Marko\source\repos\CRUD\CRUD\obj\Debug\CRUD.Insert.resources
 C:\Users\Marko\source\repos\CRUD\CRUD\obj\Debug\CRUD.principal.resources
+C:\Users\Marko\source\repos\CRUD\CRUD\obj\Debug\CRUD.update.resources

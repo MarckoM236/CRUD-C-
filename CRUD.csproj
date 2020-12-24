@@ -50,6 +50,12 @@
     <Compile Include="Conexion.cs" />
     <Compile Include="contact.cs" />
     <Compile Include="controller.cs" />
+    <Compile Include="update.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="update.Designer.cs">
+      <DependentUpon>update.cs</DependentUpon>
+    </Compile>
     <Compile Include="Insert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -80,6 +86,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="update.resx">
+      <DependentUpon>update.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -93,9 +102,23 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="src\img\refresh.jpg" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="src\img\fondo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\img\new.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\img\savee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\img\cancel.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\img\update.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
