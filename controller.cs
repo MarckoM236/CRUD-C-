@@ -20,6 +20,7 @@ namespace CRUD
             return retorno;
         }
 
+        //consult all records
         public static List<contact> Query()
         {
             List<contact> lista = new List<contact>();
@@ -74,6 +75,16 @@ namespace CRUD
             {
                 retorno = 1;
             }
+            return retorno;
+        }
+
+        public static int Delete(string id)
+        {
+
+            int retorno = 0;
+            MySqlCommand comando = new MySqlCommand(string.Format("delete from contact where id='"+id+"'"), Conexion.ObtenerConexion());
+            retorno = comando.ExecuteNonQuery();
+
             return retorno;
         }
 

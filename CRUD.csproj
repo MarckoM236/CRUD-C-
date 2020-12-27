@@ -120,5 +120,8 @@
   <ItemGroup>
     <None Include="src\img\update.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="src\img\delete.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

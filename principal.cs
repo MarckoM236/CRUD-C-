@@ -55,5 +55,20 @@ namespace CRUD
             
 
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            var id = this.dgv.CurrentRow.Cells[0].Value.ToString();
+            int result = controller.Delete(id);
+
+            if(result > 0)
+            {
+                MessageBox.Show("The record was deleted successfully");
+            }
+            else
+            {
+                MessageBox.Show("Record could not be deleted");
+            }
+        }
     }
 }

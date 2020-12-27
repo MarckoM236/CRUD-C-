@@ -33,6 +33,7 @@
             this.dgv = new System.Windows.Forms.DataGridView();
             this.btn_refresh = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv)).BeginInit();
             this.SuspendLayout();
             // 
@@ -50,7 +51,7 @@
             // button1
             // 
             this.button1.Image = global::CRUD.Properties.Resources._new;
-            this.button1.Location = new System.Drawing.Point(244, 324);
+            this.button1.Location = new System.Drawing.Point(279, 318);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(72, 61);
             this.button1.TabIndex = 8;
@@ -82,12 +83,22 @@
             // button2
             // 
             this.button2.Image = global::CRUD.Properties.Resources.update;
-            this.button2.Location = new System.Drawing.Point(344, 324);
+            this.button2.Location = new System.Drawing.Point(379, 318);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(66, 61);
             this.button2.TabIndex = 11;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.Image = global::CRUD.Properties.Resources.delete;
+            this.button3.Location = new System.Drawing.Point(467, 318);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(57, 61);
+            this.button3.TabIndex = 12;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // principal
             // 
@@ -95,6 +106,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CRUD.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btn_refresh);
             this.Controls.Add(this.dgv);
@@ -116,5 +128,6 @@
         private System.Windows.Forms.DataGridView dgv;
         private System.Windows.Forms.Button btn_refresh;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
     }
 }
