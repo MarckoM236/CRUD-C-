@@ -18,16 +18,14 @@ namespace CRUD
         {
             InitializeComponent();
             this.id = Id;
-            var result=controller.QueryID(int.Parse(this.id));
 
+            //fill fields
+            var result=controller.QueryID(int.Parse(this.id));
             txbname.Text = result.GetValue(1).ToString();
             txblastname.Text = result.GetValue(2).ToString();
             txbaddress.Text = result.GetValue(3).ToString();
             txbphone.Text = result.GetValue(4).ToString();
             txbemail.Text = result.GetValue(5).ToString();
-
-            //MessageBox.Show(result.GetValue(0).ToString());
-
         }
 
         private void update_Load(object sender, EventArgs e)
@@ -78,6 +76,12 @@ namespace CRUD
                 MessageBox.Show("Could not update");
             }
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            //close the windows
+            this.Close();
         }
     }
 }

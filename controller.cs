@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace CRUD
 {
+    //CRUD methods
     class controller
     {
+        //insert new record
         public static int Insertar(string name,string lastname, string address, string phone, string email)
         {
-            
             int retorno = 0;
             MySqlCommand comando = new MySqlCommand(string.Format("Insert into  contact(name, lastname, address, phone, email, created_at) values('{0}','{1}','{2}', '{3}','{4}',now())", name, lastname,address, phone,email), Conexion.ObtenerConexion());
 
             retorno = comando.ExecuteNonQuery();
+            Conexion.CerrarConexion();
 
             return retorno;
         }
@@ -40,9 +42,11 @@ namespace CRUD
                 
                 lista.Add(c);
             }
+            Conexion.CerrarConexion();
             return lista;
         }
 
+        //consult for ID
         public static Array QueryID(int id)
         {
             string[] result= new string[] { };
@@ -62,28 +66,30 @@ namespace CRUD
 
                 result= new string[] {i,n,ln,a,p,e,cr};
             }
+            Conexion.CerrarConexion();
             return result;
         }
 
+        //update a record
         public static int update(string id, string name, string lastname, string address, string phone, string email)
         {
             int retorno = 0;
-            MySqlCommand comando = new MySqlCommand(string.Format("update contact set name='"+name+"', lastname='"+lastname+ "', address='" + address + "', phone='" + phone + "',  email='" + email + "'   where id='" + id+"'"), Conexion.ObtenerConexion());
-            MySqlDataReader reader = comando.ExecuteReader();
+            MySqlCommand comando = new MySqlCommand(string.Format("update contact set name='"+name+"', lastname='"+lastname+ "', address='" + address + "', phone='" + phone + "',  email='" + email + "' where id='" + id+"'"), Conexion.ObtenerConexion());
+            retorno = comando.ExecuteNonQuery();
 
-            if (reader.Read() == false)
-            {
-                retorno = 1;
-            }
+            Conexion.CerrarConexion();
+
             return retorno;
         }
 
+        //delete a record
         public static int Delete(string id)
         {
-
             int retorno = 0;
             MySqlCommand comando = new MySqlCommand(string.Format("delete from contact where id='"+id+"'"), Conexion.ObtenerConexion());
             retorno = comando.ExecuteNonQuery();
+
+            Conexion.CerrarConexion();
 
             return retorno;
         }

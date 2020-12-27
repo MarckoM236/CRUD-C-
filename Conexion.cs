@@ -13,16 +13,23 @@ namespace CRUD
     {
         public static MySqlConnection ObtenerConexion()
         {
-
             MySqlConnection conectar = new MySqlConnection("server = localhost; database = contacts; Uid = root; pwd =;");
 
             conectar.Open();
 
-         
             return conectar;
         }
 
-      
+        public static MySqlConnection CerrarConexion()
+        {
+            MySqlConnection conectar = new MySqlConnection("server = localhost; database = contacts; Uid = root; pwd =;");
+
+            conectar.Close();
+
+            return conectar;
+        }
+
+
 
     }
 }
