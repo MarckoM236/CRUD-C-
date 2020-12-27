@@ -38,9 +38,14 @@ namespace CRUD
 
         }
 
+        //clean fields
         private void btn_cancel_Click(object sender, EventArgs e)
         {
             txb_name.Text = "";
+            txb_lastname.Text = "";
+            txb_address.Text = "";
+            txb_phone.Text = "";
+            txb_email.Text = "";
         }
     }
 }
